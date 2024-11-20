@@ -1,0 +1,7 @@
+app/
+  ├── page.tsx          # 主页
+  ├── layout.tsx        # 布局文件
+  ├── globals.css       # 全局样式
+  └── components/
+      ├── ChatInterface.tsx    # 聊天界面组件
+      └── Header.tsx          # 顶部导航组件 
