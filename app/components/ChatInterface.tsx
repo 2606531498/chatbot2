@@ -6,13 +6,14 @@ import rehypeRaw from 'rehype-raw'
 import rehypeHighlight from 'rehype-highlight'
 import 'highlight.js/styles/github.css' // 代码高亮样式
 
-// 添加类型定义
+// 更新类型定义
 type CodeProps = {
   node?: any
   inline?: boolean
   className?: string
   children?: React.ReactNode
-} & React.HTMLAttributes<HTMLElement>
+  // 添加其他可能的属性
+} & React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>
 
 export default function ChatInterface() {
   const [messages, setMessages] = useState<Array<{role: string, content: string, timestamp?: Date}>>([
