@@ -6,6 +6,14 @@ import rehypeRaw from 'rehype-raw'
 import rehypeHighlight from 'rehype-highlight'
 import 'highlight.js/styles/github.css' // 代码高亮样式
 
+// 添加类型定义
+type CodeProps = {
+  node?: any
+  inline?: boolean
+  className?: string
+  children?: React.ReactNode
+} & React.HTMLAttributes<HTMLElement>
+
 export default function ChatInterface() {
   const [messages, setMessages] = useState<Array<{role: string, content: string, timestamp?: Date}>>([
     { role: 'assistant', content: '你好！我是AI助手，有什么我可以帮你的吗？', timestamp: new Date() },
@@ -74,7 +82,7 @@ export default function ChatInterface() {
           // 自定义段落样式
           p: ({ children }) => <p className="mb-2 last:mb-0">{children}</p>,
           // 自定义代码块样式
-          code: ({ node, inline, className, children, ...props }) => {
+          code: ({ node, inline, className, children, ...props }: CodeProps) => {
             const match = /language-(\w+)/.exec(className || '')
             return !inline && match ? (
               <div className="relative group">
