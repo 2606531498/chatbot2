@@ -13,13 +13,10 @@ export default function RootLayout({
   return (
     <html lang="zh" className="h-full">
       <head>
-        {/* 确保在生产环境中也加载 Tailwind CSS */}
-        <link 
-          href="https://unpkg.com/tailwindcss@^3/dist/tailwind.min.css" 
-          rel="stylesheet" 
-        />
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
-      <body className="h-full bg-gradient-to-b from-gray-50 to-white">
+      <body className="h-full bg-gradient-to-b from-gray-50 to-white min-h-screen">
         {children}
       </body>
     </html>

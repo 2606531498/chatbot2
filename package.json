@@ -4,10 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "npx tailwindcss build -o app/globals.css && next build",
     "start": "next start",
-    "lint": "next lint",
-    "postinstall": "npx tailwindcss init -p"
+    "lint": "next lint"
   },
   "dependencies": {
     "highlight.js": "^11.9.0",
