@@ -7,10 +7,21 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        background: 'rgb(var(--background-start-rgb))',
+      },
       typography: {
         DEFAULT: {
           css: {
             maxWidth: 'none',
+            color: 'inherit',
+            a: {
+              color: 'inherit',
+              textDecoration: 'none',
+            },
+            code: {
+              color: 'inherit',
+            },
           },
         },
       },
@@ -19,4 +30,4 @@ module.exports = {
   plugins: [
     require('@tailwindcss/typography'),
   ],
-} 
+}
