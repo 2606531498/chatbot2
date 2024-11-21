@@ -1,8 +1,15 @@
 import './globals.css'
+import type { Metadata } from 'next'
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'AI Chat Assistant',
   description: 'Your intelligent chat companion',
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 1,
+    userScalable: false,
+  },
 }
 
 export default function RootLayout({
@@ -12,12 +19,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="zh">
-      <head>
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-      </head>
-      <body className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
-        {children}
+      <body className="min-h-screen bg-gradient-to-b from-gray-50 to-white touch-manipulation">
+        <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+          {children}
+        </div>
       </body>
     </html>
   )
