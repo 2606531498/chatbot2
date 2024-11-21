@@ -2,7 +2,7 @@ import OpenAI from 'openai'
 import { NextResponse } from 'next/server'
 
 const client = new OpenAI({
-  apiKey: process.env.DEEPSEEK_API_KEY,
+  apiKey: process.env.OPENAI_API_KEY || process.env.DEEPSEEK_API_KEY,
   baseURL: 'https://api.deepseek.com/v1',
 })
 
