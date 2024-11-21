@@ -12,8 +12,7 @@ type CodeProps = {
   inline?: boolean
   className?: string
   children?: React.ReactNode
-  // 添加其他可能的属性
-} & React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>
+} & React.ComponentPropsWithoutRef<'code'>
 
 export default function ChatInterface() {
   const [messages, setMessages] = useState<Array<{role: string, content: string, timestamp?: Date}>>([
