@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import ReactMarkdown from 'react-markdown'
 import rehypeRaw from 'rehype-raw'
 import rehypeHighlight from 'rehype-highlight'
@@ -20,9 +20,31 @@ export default function ChatInterface() {
   ])
   const [input, setInput] = useState('')
   const [isLoading, setIsLoading] = useState(false)
+  const [networkStatus, setNetworkStatus] = useState('online');
+
+  useEffect(() => {
+    const handleOnline = () => setNetworkStatus('online');
+    const handleOffline = () => setNetworkStatus('offline');
+
+    window.addEventListener('online', handleOnline);
+    window.addEventListener('offline', handleOffline);
+
+    return () => {
+      window.removeEventListener('online', handleOnline);
+      window.removeEventListener('offline', handleOffline);
+    };
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+    if (networkStatus === 'offline') {
+      setMessages(prev => [...prev, {
+        role: 'assistant',
+        content: '当前网络不可用，请检查网络连接后重试。',
+        timestamp: new Date()
+      }]);
+      return;
+    }
     if (!input.trim() || isLoading) return
 
     try {
@@ -207,6 +229,12 @@ export default function ChatInterface() {
           </button>
         </form>
       </div>
+
+      {isLoading && (
+        <div className="fixed bottom-20 left-1/2 transform -translate-x-1/2 bg-black bg-opacity-70 text-white px-4 py-2 rounded-full">
+          正在连接服务器...
+        </div>
+      )}
     </div>
   )
 } 

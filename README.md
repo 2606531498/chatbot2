@@ -1,36 +1,67 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AI Chat Assistant
 
-## Getting Started
+基于 Next.js 14 和 DeepSeek API 构建的智能聊天助手。
 
-First, run the development server:
+## 快速开始
 
+1. 安装依赖：
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. 创建环境变量文件 `.env.local`：
+```bash
+OPENAI_API_KEY=your_api_key
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. 启动开发服务器：
+```bash
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 主要功能
 
-## Learn More
+- 实时 AI 对话
+- Markdown 格式支持
+- 代码高亮显示
+- 响应式设计
+- 移动端适配
 
-To learn more about Next.js, take a look at the following resources:
+## 技术栈
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Next.js 14
+- TypeScript
+- Tailwind CSS
+- DeepSeek API
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 在线演示
 
-## Deploy on Vercel
+访问 [https://chatbot2-mu.vercel.app](https://chatbot2-mu.vercel.app)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+注意：国内移动端访问可能需要使用 VPN。
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 文档
+
+详细开发文档请查看 [开发文档](./docs/DEVELOPMENT.md)
+
+## 许可证
+
+MIT License
+
+## 即将推出
+
+### 会员服务
+- 多种会员等级
+- 更多 API 调用次数
+- 专属功能访问
+
+### 赞助支持
+- 赞助者特权
+- 定制化服务
+- 优先技术支持
+
+### 更多功能
+- 多模型支持
+- 对话导出
+- 历史记录
+- 社区互动
