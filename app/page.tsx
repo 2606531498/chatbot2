@@ -1,4 +1,6 @@
 import ChatInterface from './components/ChatInterface'
+import Feedback from './components/Feedback'
+import SponsorButton from './components/SponsorButton'
 
 export default function Home() {
   return (
@@ -13,6 +15,8 @@ export default function Home() {
           </p>
         </div>
         <ChatInterface />
+        <Feedback />
+        <SponsorButton />
       </div>
     </main>
   )

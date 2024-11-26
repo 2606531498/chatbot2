@@ -146,6 +146,15 @@ export default function ChatInterface() {
     )
   }
 
+  // 添加格式化时间的函数
+  const formatTime = (date: Date) => {
+    return date.toLocaleTimeString([], { 
+      hour: '2-digit', 
+      minute: '2-digit',
+      hour12: false // 使用24小时制
+    })
+  }
+
   return (
     <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100">
       {/* 聊天消息区域 */}
@@ -190,8 +199,8 @@ export default function ChatInterface() {
                   )}
                 </div>
                 {message.timestamp && (
-                  <span className="text-xs text-gray-400 mt-1">
-                    {message.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+                  <span className="text-xs text-gray-400 mt-1" suppressHydrationWarning>
+                    {formatTime(message.timestamp)}
                   </span>
                 )}
               </div>
